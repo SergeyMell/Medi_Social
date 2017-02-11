@@ -1,4 +1,3 @@
-
 angular
   .module('app.core')
   .config(config);
@@ -13,13 +12,13 @@ interceptor.$inject = ['$q', '$injector', 'AuthModel'];
 
 function interceptor($q, $injector, AuthModel) {
   return {
-    request: function(config) {
+    request: function (config) {
       config.headers.Authorization = AuthModel.token;
       return config;
     },
-    responseError: function(rejection) {
+    responseError: function (rejection) {
 
     }
   };
-  
+
 }

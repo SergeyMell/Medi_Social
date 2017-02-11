@@ -12,5 +12,4 @@ function AuthModel() {
 
   return authModel;
 
-
 }
