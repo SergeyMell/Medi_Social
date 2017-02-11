@@ -13,9 +13,12 @@
     vm.model = {
       user: UserResource.get(),
 
-      report: {},
       reportYear: (new Date()).getFullYear(),
-      reportMonth: (new Date()).getMonth() + 1
+      reportMonth: (new Date()).getMonth() + 1,
+
+      report: {},
+      rateReport: {},
+      hospitalReport: {}
     };
 
     vm.menu = {
@@ -29,7 +32,14 @@
         }
       ).$promise.then(function(response) {
         vm.model.report = response;
-        console.log(response);
+        vm.model.rateReport = response['rate_report'];
+        vm.model.rateReport['docent_rate'] = parseFloat(vm.model.rateReport['docent_rate']) || vm.model.user['docent_rate'];
+        vm.model.rateReport['assistant_rate'] = parseFloat(vm.model.rateReport['assistant_rate']) || vm.model.user['assistant_rate'];
+        vm.model.rateReport['professor_rate'] = parseFloat(vm.model.rateReport['professor_rate']) || vm.model.user['professor_rate'];
+        vm.model.rateReport['department_head_rate'] = parseFloat(vm.model.rateReport['department_head_rate']) || vm.model.user['department_head_rate'];
+
+        vm.model.hospitalReport = response['hospital_report'];
+        
       });
     }
 

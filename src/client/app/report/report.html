@@ -6,3 +6,24 @@
   <input type="text" ng-model="vm.model.reportMonth" placeholder="Month">
   <button ng-click="vm.menu.getReport()">Get Report</button>
 </div>
+
+<hr>
+<div ng-if="vm.model.report.id">
+  Docent Rate: <input type="text" ng-model="vm.model.rateReport.docent_rate"><br>
+  Assistant Rate: <input type="text" ng-model="vm.model.rateReport.assistant_rate"><br>
+  Professor Rate: <input type="text" ng-model="vm.model.rateReport.professor_rate"><br>
+  Department Head Rate: <input type="text" ng-model="vm.model.rateReport.department_head_rate"><br>
+
+  <hr>
+  Количество проведенных больных <input type="text" ng-model="vm.model.hospitalReport['number_of_patients']"><br>
+  Количество кровате-дней <input type="text" ng-model="vm.model.hospitalReport['number_of_bed_days']"><br>
+  Номера историй больных <textarea cols="30" rows="10"
+                                   ng-model="vm.model.hospitalReport['patient_disease_histories']"></textarea><br>
+  <br>
+  Количество консультаций <input type="text" ng-model="vm.model.hospitalReport['number_of_consultations']">
+  Номера историй консультаций <textarea cols="30" rows="10"
+                                        ng-model="vm.model.hospitalReport['consultation_disease_histories']"></textarea><br>
+  <br>
+  Количество малоинвазивных вмешательств <input type="text"ng-model="vm.model.hospitalReport['number_of_miis']"><br>
+  Количество обходов <input type="text"ng-model="vm.model.hospitalReport['number_of_rounds']">
+</div>
