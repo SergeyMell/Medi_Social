@@ -9,6 +9,17 @@
 
   function DashboardController($q, dataservice, logger, UserResource) {
     var vm = this;
-    
+
+    vm.model = {
+      user: UserResource.get()
+    };
+
+    vm.menu = {
+      updateUser: updateUser
+    };
+
+    function updateUser() {
+      UserResource.update(vm.model.user);
+    }
   }
 })();

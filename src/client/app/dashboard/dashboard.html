@@ -1,3 +1,12 @@
-<div>
-  Dashboard view
-</div>
+<img ng-src="{{vm.model.user.avatar}}" width="30" alt=""> <br>
+
+First Name:<input type="text" ng-model="vm.model.user.first_name"><br>
+Last Name: <input type="text" ng-model="vm.model.user.last_name"><br>
+Patronymic: <input type="text" ng-model="vm.model.user.patronymic"><br>
+
+Docent Rate: <input type="text" ng-model="vm.model.user.docent_rate"><br>
+Assistant Rate: <input type="text" ng-model="vm.model.user.assistant_rate"><br>
+Professor Rate: <input type="text" ng-model="vm.model.user.professor_rate"><br>
+Department Head Rate: <input type="text" ng-model="vm.model.user.department_head_rate"><br>
+
+<button ng-click="vm.menu.updateUser()">Update User Information</button>
